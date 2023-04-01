@@ -14,6 +14,20 @@ COPY . /code
 
 
 EXPOSE 8000
-VOLUME["/code/db"]
+VOLUME ["/code/db"]
 
- CMD sh init.sh && python manage.py runserver 0.0.0.0:8000
+CMD sh init.sh && python manage.py runserver 0.0.0.0:8000
+
+
+# blog:1
+# FROM python:3-alpine
+#
+# WORKDIR /code
+#
+# RUN mkdir db
+# COPY ./requirements.txt /code/requirements.txt
+# RUN pip install -r requirements.txt
+# COPY . /code
+#
+# EXPOSE 8000
+# CMD sh init.sh && python manage.py runserver 0.0.0.0:8000
